@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 
 <head>
   <title>Formular</title>
@@ -25,7 +25,7 @@
         $pdo = new PDO('mysql:host=localhost;dbname=php_formular','root', '');
         if ($pdo){
           print("<br />Verbindung zur Datenbank");
-          $statement = $pdo->prepare("INSERT INTO kunde (name, vorname, adresse, email) VALUES (?, ?, ?,?)");
+          $statement = $pdo->prepare("INSERT INTO kunde (name, vorname, adresse, email) VALUES (?, ?, ?, ?)");
           $statement->execute(array($name,$vorname,$adresse,$email));   
           $neue_id = $pdo->lastInsertId();
           print("Neuer Nutzer mit ID $neue_id angelegt");
